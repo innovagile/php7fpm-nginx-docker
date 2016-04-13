@@ -6,6 +6,7 @@ RUN apt-get install -y language-pack-en-base
 RUN locale-gen en_US.UTF-8 && export LANG=en_US.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive LC_ALL=en_US.UTF-8 add-apt-repository -y ppa:ondrej/php
 RUN apt-get -y update
+RUN apt-get -y upgrade
 
 RUN apt-get install -y --force-yes php7.0-fpm php7.0-curl php7.0-cli php7.0-common php7.0-json php7.0-opcache php7.0-mysql php7.0-intl php-apcu openssl nginx
 RUN apt-get autoremove -y
